@@ -22,7 +22,7 @@ The **Course Agency Website** is a web-based application designed for managing a
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone [<repository-url>](https://github.com/RoaaEmadEldin/Course-Agency-Website)
+   git clone https://github.com/RoaaEmadEldin/Course-Agency-Website
 2. Open the solution in Visual Studio.
 3. Configure the database connection string in the appsettings.json file.
 4. Run database migrations:
