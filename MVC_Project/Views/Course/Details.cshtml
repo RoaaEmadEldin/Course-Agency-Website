@@ -1,0 +1,28 @@
+﻿@model Course
+
+@{
+    ViewBag.Title = $"{@Model.Name} Course Details";
+}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">Total Degree: @Model.Degree</p>
+        <p class="card-text">Minimum Degree: @Model.MinDegreee</p>
+
+        @if(Model.Instuctors != null){
+            <p class="card-text">Instructors Teaching this Course:</p>
+
+            <ul>
+                @foreach (var i in Model.Instuctors)
+                {
+                    <li>@i.Name</li>
+                }
+            </ul>
+        }
+        
+
+        <br/>
+        <a href="/Courses" class="btn btn-primary">Back to List</a>
+    </div>
+</div>

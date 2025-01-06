@@ -1,0 +1,19 @@
+﻿@model Department
+
+@{
+    ViewBag.Title = "Update Department";
+}
+
+<form method="post" asp-action="SaveUpdate" asp-controller="Department" asp-route-id="@Model.DeptID">
+
+    <input type="hidden" asp-for="DeptID" />
+    <partial name="DeptCRUDPartialView" />
+    <br />
+    <button type="submit" class="btn btn-outline-primary">Save</button>
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

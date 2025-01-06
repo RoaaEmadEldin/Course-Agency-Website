@@ -1,0 +1,31 @@
+﻿@model Trainee
+@{
+    SelectList deptOpt = new SelectList(ViewBag.Departments, "DeptID", "Name");
+}
+<div class="form-group">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" />
+    <span style="color:red" asp-validation-for="Name"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Image"></label>
+    <input asp-for="Image" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Address"></label>
+    <input asp-for="Address" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Grade"></label>
+    <input asp-for="Grade" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="DeptId"></label>
+    <select asp-for="DeptId" asp-items="deptOpt" class="form-control">
+    </select>
+</div>
+<br />

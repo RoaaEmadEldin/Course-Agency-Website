@@ -1,0 +1,40 @@
+﻿@model List<Instuctor>
+
+@{
+    ViewBag.Title = "Instructors";
+}
+
+<a href="/Instructors/New" class="btn btn-outline-primary"> New </a>
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Department</th>
+            <th scope="col">Course</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var inst in Model)
+        {
+            <tr>
+                <th scope="row">@inst.InstID</th>
+                <td>@inst.Name</td>
+                <td>@inst.Address</td>
+                <td>@inst.Department?.Name</td>
+                <td>@inst.Course?.Name</td>
+                <td><a href="/Instructors/@inst.InstID" class="btn btn-outline-info">Details</a></td>
+                <td><a href="/Instructors/Update/@inst.InstID" class="btn btn-outline-secondary">Update</a></td>
+                <td><a href="/Instructors/Delete/@inst.InstID" class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

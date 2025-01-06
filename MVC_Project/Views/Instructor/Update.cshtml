@@ -1,0 +1,18 @@
+﻿@model Instuctor
+
+@{
+    ViewBag.Title = "Update Instructor";
+}
+
+<form method="post" asp-action="SaveUpdate" asp-controller="Instructor" asp-route-id="@Model.InstID">
+
+    <input type="hidden" asp-for="InstID" />
+    <partial name="InstCRUDPartialView" />
+    <br />
+    <button type="submit" class="btn btn-outline-primary">Save</button>
+</form>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

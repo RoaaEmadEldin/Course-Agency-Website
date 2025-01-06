@@ -1,0 +1,16 @@
+﻿@model Instuctor
+
+@{
+    ViewBag.Title = $"Instructor {@Model.Name} Details";
+}
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/assets/images/@Model.Image" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">Department: @Model.Department?.Name</p>
+        <p class="card-text">Course: @Model.Course?.Name</p>
+
+        <a href="/Instructors" class="btn btn-primary">Back to List</a>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model StudentWithCrsResultsVM
+
+<div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+        <img class="card-img-top" src="/assets/images/@Model.StudentImage" alt="Card image cap">
+        <h1 style="align-content:center">@Model.StudentName</h1>
+        <h5 class="card-title">Department: @Model.DeptName</h5>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Degree</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var crs in Model.Courses)
+                {
+                    <tr>
+                        <th scope="row">-</th>
+                        <td>@crs.CourseName</td>
+                        <td style="color: @crs.color">@crs.Degree</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+        <a href="/Trainees" class="btn btn-primary">Back to List</a>
+    </div>
+</div>
+

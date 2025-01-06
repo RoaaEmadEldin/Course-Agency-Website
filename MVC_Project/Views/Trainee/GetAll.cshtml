@@ -1,0 +1,41 @@
+﻿@model List<Trainee>
+
+@{
+    ViewBag.Title = "Trainees";
+}
+
+<a href="/Trainees/New" class="btn btn-outline-primary"> New </a>
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Department</th>
+            <th scope="col">Grade</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trainee in Model)
+        {
+            <tr>
+                <th scope="row">@trainee.Id</th>
+                <td>@trainee.Name</td>
+                <td>@trainee.Address</td>
+                <td>@trainee.Department?.Name</td>
+                <td>@trainee.Grade</td>
+                <td><a href="/Trainees/@trainee.Id" class="btn btn-outline-info">Details</a></td>
+                <td><a href="/Trainees/Update/@trainee.Id" class="btn btn-outline-secondary">Update</a></td>
+                <td><a href="/Trainees/Delete/@trainee.Id" class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
